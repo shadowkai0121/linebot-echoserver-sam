@@ -49,3 +49,11 @@ aws sts get-caller-identity
 sam build --use-container
 sam local start-api --env-vars .env.local.json
 ```
+
+4. 建立 `ngrok` 轉發
+
+```bash
+ngrok http 3000 --host-header=rewrite
+```
+
+5. 到測試用 Line Account 設定 webhook

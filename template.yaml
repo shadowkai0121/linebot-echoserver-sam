@@ -21,12 +21,12 @@ Parameters:
   ChannelSecret:
     Type: String
     NoEcho: true
-    Description: LINE Channel secret (use real value in prod; for dev you can leave blank if reading from .env)
+    Description: LINE Channel secret token
     Default: ""
   ChannelAccessToken:
     Type: String
     NoEcho: true
-    Description: LINE Channel access token (use real value in prod; for dev you can leave blank if reading from .env)
+    Description: LINE Channel access token 
     Default: ""
 
 Resources:
@@ -43,7 +43,7 @@ Resources:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
             Path: /
-            Method: get
+            Method: POST
       Environment:
         Variables:
           CHANNEL_SECRET: !Ref ChannelSecret
